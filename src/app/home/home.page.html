@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Sleep Logger
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-label color="primary">Recorded Sleep Date and Time</ion-label>
+  <ion-list>
+    <ion-item *ngFor="let index of data">
+      Start Time:{{index.sleepStart}} End Time:{{index.sleepEnd}}
+    </ion-item>
+    <ion-label color="primary">Recorded Sleepiness Scale</ion-label>
+    <ion-item *ngFor="let index of data2">
+      {{index.loggedValue}}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-tabs>
+    <ion-tab label="Music" icon="musical-note"></ion-tab>
+    <ion-tab label="Profile" icon="alarm"></ion-tab>
+    <ion-tab label="People" icon="book"></ion-tab>
+  
+    <ion-tab-bar slot="bottom">
+  
+        <ion-tab-button tab ="Home" href='/home'>
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab ="Music" href="/sleeptracker">
+          <ion-icon name="alarm"></ion-icon>
+          <ion-label>Sleep Tracker</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab ="People" href="/stanfordsleepiness">
+          <ion-icon name="book"></ion-icon>
+          <ion-label>Sleepiness Scale</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+  </ion-tabs>
